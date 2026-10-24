@@ -47,6 +47,11 @@ let sttProviders = {
 
 let sttProvider = null;
 let sttProviderName = 'None';
+// Lets other extensions (e.g. Phone Call) reuse the selected provider.
+window.speechRecognitionApi = {
+    getProvider: () => sttProvider,
+    getProviderName: () => sttProviderName,
+};
 
 let audioRecording = false;
 const constraints = { audio: { sampleSize: 16, channelCount: 1, sampleRate: 16000 } };
