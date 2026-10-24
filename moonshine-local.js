@@ -16,11 +16,11 @@ class MoonshineLocalSttProvider {
 
     defaultSettings = {
         language: '',
-        model: 'UsefulSensors/moonshine-streaming-tiny',
+        model: 'onnx-community/moonshine-tiny-ONNX',
     };
 
     modelOptions = [
-        { value: 'UsefulSensors/moonshine-streaming-tiny', label: 'Moonshine Tiny Streaming (34M, English)' },
+        { value: 'onnx-community/moonshine-tiny-ONNX', label: 'Moonshine Tiny (27M, English)' },
     ];
 
     get settingsHtml() {
@@ -35,7 +35,7 @@ class MoonshineLocalSttProvider {
             <select id="moonshine_local_model">
                 ${options}
             </select>
-            <div><i>If the model fails to load, your browser cannot run this model format yet. Try again after the model is available as ONNX.</i></div>
+            <div><i>Transcribes each recording after you stop speaking. Requires WebAssembly support.</i></div>
         </div>
         `;
     }
